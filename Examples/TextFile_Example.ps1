@@ -1,17 +1,22 @@
 configuration TextFile
 {
-    #Import-DscResource -ModuleName PSDesiredStateConfiguration
-    #Import-DscResource -Name MSFT_xRemoteFile -ModuleName xPSDesiredStateConfiguration
-
-    Import-DscResource -ModuleName TextFile
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     node $AllNodes.Where{$_.Role -eq "TextFile"}.NodeName
     {
-        TextFile addTextFile
+        File TempFolder
         {
             Ensure      = 'Present'
-            FilePath    = 'c:\Temp\hello.txt'
-            FileContent = 'Hello World!'
+            DestinationPath = 'c:\Temp'
+            Type = 'Directory'
+        }        
+        File DataFile
+        {
+            Ensure      = 'Present'
+            DestinationPath = 'c:\Temp\hello.txt'
+            Contents = 'Hello World!'
+            Type = 'File'
+            DependsOn = '[File]TempFolder'
         }
     }
 }

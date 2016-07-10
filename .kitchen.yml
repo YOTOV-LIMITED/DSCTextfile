@@ -1,12 +1,6 @@
 ---
 driver:
   name: vagrant
-  linked_clones: true
-  gui: false
-  communicator: winrm
-  customize:
-    cpus: 1
-    memory: 4096
 
 provisioner:
   name: dsc
@@ -25,11 +19,9 @@ verifier:
   test_folder: Tests
 
 platforms:
-  - name: windows-2012r2-wmf5
+  - name: windows_nano
     driver:
-      box: Windows2012R2WMF5
-    provisioner:
-      dsc_local_configuration_manager_version: wmf5
+      box: mwrock/WindowsNanoDSC
 
 suites:
   - name: TextFile
