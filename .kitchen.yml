@@ -1,6 +1,7 @@
 ---
 driver:
   name: vagrant
+  gui: false
 
 provisioner:
   name: dsc
