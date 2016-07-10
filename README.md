@@ -6,7 +6,9 @@ The `.kitchen.yml` file includes a TP5 Windows Nano vagrant box with the DSC pac
 
 ## Prerequisites needed to converge
 
-You must have a modern ruby environment installed with bundler. If you have the Chef-DK installed, you have that.
+- You must have a modern ruby environment installed with bundler. If you have the Chef-DK installed, you have that.
+- Virtualbox (tested with 5.0.24 on Ubuntu 14.04 and 5.0.10 on Windows 10) or Hyper-V
+- Vagrant (tested with 1.8.4)
 
 ## Running the converge
 
