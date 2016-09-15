@@ -1,0 +1,6 @@
+{
+  "name": "Dsctextfile",
+  "tagline": "Testing packaging modules with Test-Kitchen, Jenkins, and, SMB Share. ",
+  "body": "# Test-Kitchen/DSC/PSRP/Nano...Oh my\r\n\r\nThis repo demonstrates converging a Windows Nano Server node using Test-Kitchen's DSC driver. The `Gemfile` pulls in soon to be released winrm-v2 branches that invoke remote Powershell using the PSRP protocol allowing it to work with nano.\r\n\r\nThe `.kitchen.yml` file includes a TP5 Windows Nano vagrant box with the DSC package installed.\r\n\r\n## Prerequisites needed to converge\r\n\r\n- You must have a modern ruby environment installed with bundler. If you have the Chef-DK installed, you have that.\r\n- Virtualbox (tested with 5.0.24 on Ubuntu 14.04 and 5.0.10 on Windows 10) or Hyper-V\r\n- Vagrant (tested with 1.8.4)\r\n\r\n## Running the converge\r\n\r\n```\r\nbundle install\r\nbundle exec kitchen verify\r\n```\r\n\r\n## Known issue with the Hyper-V vagrant provider box\r\n\r\nIf you are using Hyper-V, the very first time the Nano VM starts up, it will blue screen. It may do so several times. Keep rebooting and eventually it should come up and never blue screen again.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
